@@ -56,19 +56,31 @@ if __name__ =="__main__" :
     while True :
         query = takeCommand().lower()
 
-        if "sevak" in query :
+        if "type" in query :
+            query = query.replace("type","")
+            pi.typewrite(f"{query}" , 0.2)
+
+        elif "rio" in query :
             print("Yes, How may I help you?")
             speak("Yes, How may I help you?")
 
-        elif "type" in query :
-            query = query.replace("type","")
-            pi.tywrite(f"{query}" , 0.2)
+        elif "introduce yourself" in query :
+            print("Hello everyone , My name is Rio . I am a virtual Desktop Assisstant. I can do various tasks like : searching information on web and wikipedia , opening applications , searching on YouTube and whatever my creator programmed me to do.")
+            speak("Hello everyone , My name is Rio . I am a virtual Desktop Assisstant. I can do various tasks like : searching information on web and wikipedia , opening applications , searching on YouTube and whatever my creator programmed me to do.")
+
+        elif "job"  in query :
+            print("I appreciate you like my work.")
+            speak("I appreciate you like my work.")
 
         elif "who are you" in query :
-            print("Hi!I am your sevuk")
-            speak("Hi!I am your sevuk")
+            print("Hi!I am your rio")
+            speak("Hi!I am your rio")
 
-        elif "what are the things you can do?" in query :
+        elif "who created you" in query :
+            print("Miss Vanshika")
+            speak("Miss Vanshika")
+
+        elif "what are the things you can do" in query :
             print("I would love to help you. I can do various tasks like : searching information on web and wikipedia , opening applications , searching on YouTube and whatever my creator programmed me to do")
             speak("I would love to help you. I can do various tasks like : searching information on web and wikipedia , opening applications , searching on YouTube and whatever my creator programmed me to do")
 
