@@ -135,7 +135,13 @@ if __name__ =="__main__" :
 
         elif "romantic music on spotify" in query : #11
             webbrowser.open("https://open.spotify.com/playlist/3aD78p7nhLiKAqFMN03t0J")
-            pi.press(x=)
+            time.sleep(10)
+            pi.press(x=520,y=603,clicks = 1)
+
+        elif "stop playing" in query : 
+            speak("As you say")
+            time.sleep(2)
+            pi.click(x=519,y=602,clicks =1)
 
         elif "open command prompt" in query : #12
             os.system("start cmd")
@@ -169,12 +175,12 @@ if __name__ =="__main__" :
                 cap.release()
                 cv2.destroyAllWindows()
 
-        elif "take screenshot" in query : #19
+        elif "screenshot" in query : #19
             speak("okay, please Tell me the name of your ss file")
             name = takeCommand().lower()
             time.sleep(3)
             img = pi.screenshot()
-            img.save("{name}.png")
+            img.save("f{name}.png")
             speak("Screenshot saved")
 
         elif "my ip address" in query : #20
@@ -225,9 +231,11 @@ if __name__ =="__main__" :
 
         elif "open notepad" in query : #29
             pi.press('win')
+            time.sleep(1)
             pi.write('notepad')
+            time.sleep(1)
             pi.press('enter')
-
+           
         elif "write on notepad" in query : #30
             query = query.replace('write on notepad','')
             pi.press('win')
@@ -238,4 +246,15 @@ if __name__ =="__main__" :
             pi.typewrite(f"{query}",0.2)
 
         elif "open app" in query : #31
-            query = query.replace()
+            query = query.replace("open app","")
+            pi.hotkey('win')
+            time.sleep(0.7)
+            pi.write(f"{query}")
+            pi.press("enter")
+
+        elif "close" in query :
+            pi.click(x=1886,y=14,clicks=1)
+
+        elif "bye" in query :
+            speak("Hope you loved my work")
+            
